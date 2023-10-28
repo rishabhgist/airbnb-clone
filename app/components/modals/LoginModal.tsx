@@ -6,6 +6,7 @@ import { useCallback, useState } from "react";
 import { AiFillGithub } from "react-icons/ai";
 import { FcGoogle } from "react-icons/fc";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
+import useRegisterModal from "@/app/hooks/useRegisterModal";
 import Modal from "./Modal";
 import Heading from "../Heading";
 import Input from "../inputs/Input";
@@ -16,6 +17,8 @@ import { useRouter } from "next/navigation";
 
 const LoginModal = () => {
   const loginModel = useLoginModal();
+  const registerModal = useRegisterModal();
+
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
 
@@ -42,6 +45,10 @@ const LoginModal = () => {
       }
     });
   };
+  const toggle = useCallback(() => {
+    loginModel.onClose();
+    registerModal.onOpen();
+  }, [loginModel, registerModal]);
 
   const bodyContent = (
     <div className=" flex flex-col gap-4">
@@ -86,12 +93,12 @@ const LoginModal = () => {
       />
       <div className="text-neutral-500 text-center mt-4 font-light">
         <div className="flex flex-row items-center gap-2 justify-center">
-          <div>Already have asn account?</div>
+          <div>First time using Airbnb?</div>
           <div
-            onClick={loginModel.onClose}
+            onClick={toggle}
             className="text-neutral-800 cursor-pointer hover:underline"
           >
-            Log In
+            Create an account
           </div>
         </div>
       </div>
