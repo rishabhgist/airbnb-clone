@@ -1,3 +1,11 @@
+# Airbnb Close - Next.js, Prisma, MongoDB, Tailwind, NextAuth
+
+Airbnb clone created using Next.js live preview -
+
+## Preview
+
+![](preview.jpg)
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
