@@ -17,6 +17,7 @@ const ListingPage = async ({ params }: { params: IParams }) => {
   if (!listing) {
     return <EmptyState />;
   }
+
   return (
     <ListingClient
       listing={listing}
